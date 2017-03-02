@@ -40,6 +40,13 @@
     <EmbeddedResource Remove="node_modules\**" />
     <None Remove="node_modules\**" />
     <Content Include="**\*.ts" Exclude="$(GlobalExclude)" />
+    <None Include="less\site.less" />
+    <None Include="less\all.less" />
+    <None Include="less\controls.less" />
+    <None Include="wwwroot\images\veggieBG%403x.png" />
+    <None Include="wwwroot\styles\all.css" />
+    <None Include="wwwroot\styles\main.css" />
+    <None Include="wwwroot\styles\vendor.css" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="wwwroot\tsconfig.json" />
