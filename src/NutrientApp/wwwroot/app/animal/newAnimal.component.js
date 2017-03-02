@@ -1,0 +1,1 @@
+//# sourceMappingURL=newAnimal.component.js.map

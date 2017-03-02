@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp1.0</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <PreBuildEvent>C:\Program Files\nodejs\npm build</PreBuildEvent>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -29,11 +31,20 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-  <Compile Include="**/*.js">
-    <!-- either: -->
-    <InProject>false</InProject>
-    <!-- or: -->
-    <Visible>false</Visible>
-  </Compile>
-</ItemGroup>
+    <Content Remove="wwwroot\app\*.js" />
+    <Content Remove="wwwroot\app\*.js.map" />
+    <Content Remove="wwwroot\*.js.map" />
+    <!--<Content Include="wwwroot\*.ts" />-->
+    <Compile Remove="node_modules\**" />
+    <Content Remove="node_modules\**" />
+    <EmbeddedResource Remove="node_modules\**" />
+    <None Remove="node_modules\**" />
+    <Content Include="**\*.ts" Exclude="$(GlobalExclude)" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="wwwroot\tsconfig.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="less\" />
+  </ItemGroup>
 </Project>
