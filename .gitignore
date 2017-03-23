@@ -40,3 +40,7 @@ node_modules/
 
 # dotCover
 *.dotCover
+/src/NutrientApp/wwwroot/app/animal/existingAnimal.component.js.map
+/src/NutrientApp/wwwroot/app/animal/existingAnimal.component.js
+/src/NutrientApp/wwwroot/app/*.js
+/src/NutrientApp/wwwroot/app/*.map.js

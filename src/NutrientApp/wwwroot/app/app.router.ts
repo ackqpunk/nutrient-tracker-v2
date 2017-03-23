@@ -1,16 +1,13 @@
 ﻿import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { SplashScreenComponent } from './splashScreen/splashScreen.component';
+import { LoginComponent } from './login/login.component';
+import { AnimalChoiceComponent } from './animal/animalChoice.component';
+import { ExistingAnimalComponent } from './animal/existingAnimal.component';
 
-const routes: Routes = [
-    { path: '', component: SplashScreenComponent },
+export const routes: Routes = [
+    { path: '', component: LoginComponent },
+    { path: 'home', component: AnimalChoiceComponent },
+    { path: 'existing', component: ExistingAnimalComponent }
 ];
-
-@NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule],
-})
-export class SplashScreenRoutingModule { }
-
-export const routedComponents = [SplashScreenComponent]
+export const routedComponents = [LoginComponent, AnimalChoiceComponent, ExistingAnimalComponent]

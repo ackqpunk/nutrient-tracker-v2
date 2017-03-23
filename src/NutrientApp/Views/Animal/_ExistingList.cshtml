@@ -1,0 +1,29 @@
+﻿<div class="jumbotron">
+    <div class="title-row row">
+        <h2>Choose existing animal</h2>
+    </div>
+    <div class="row">
+        <div>
+            <div class="form-group has-feedback has-feedback-left">
+                <label class="control-label pull-left">Search by name</label>
+                <input type="text" class="form-control" placeholder="Username" />
+                <i class="glyphicon glyphicon-search form-control-feedback"></i>
+            </div>
+        </div>
+    </div>
+    <div>
+        <kendo-grid [data]="animals">
+            <kendo-grid-column field="name" title="Name">
+            </kendo-grid-column>
+            <kendo-grid-column field="type" title="Type" >
+            </kendo-grid-column>
+            <kendo-grid-column field="breed" title="Breed">
+            </kendo-grid-column>
+        </kendo-grid>
+    </div>
+    <div class="row form-buttons">
+        <div class="col-md-6 col-sm-12">
+            <button class="btn btn-cta btn-cta-primary btn-block col-md-5" (click)="back()">Back</button>
+        </div>
+    </div>
+</div>

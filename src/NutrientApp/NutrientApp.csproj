@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp1.0</TargetFramework>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
-    <PreBuildEvent>C:\Program Files\nodejs\npm build</PreBuildEvent>
+    <PackageTargetFallback>portable-net45+win8</PackageTargetFallback>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -13,7 +13,7 @@
         <Command>
           <type>Build</type>
           <command>npm build</command>
-          <workingdir>${ProjectDir}</workingdir>
+          <workingdir>${ProjectDir}/wwwroot</workingdir>
           <externalConsole>True</externalConsole>
         </Command>
       </CustomCommands>
@@ -29,6 +29,13 @@
     <PackageReference Include="Microsoft.AspNetCore">
       <Version>1.1.0</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.0-msbuild3-final" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.1.0-preview4-final" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\app\*.js" />
@@ -40,18 +47,196 @@
     <EmbeddedResource Remove="node_modules\**" />
     <None Remove="node_modules\**" />
     <Content Include="**\*.ts" Exclude="$(GlobalExclude)" />
+    <Content Remove="wwwroot/app\login\login.component.js" />
+    <Content Remove="wwwroot/app\splashScreen\splashScreen.component.js" />
+    <Content Remove="wwwroot/app\splashScreen\splashScreen.component.js.map" />
     <None Include="less\site.less" />
     <None Include="less\all.less" />
     <None Include="less\controls.less" />
+    <None Include="node_modules\%40progress\kendo-theme-default\.editorconfig" />
+    <None Include="node_modules\%40progress\kendo-theme-default\.npmignore" />
+    <None Include="node_modules\%40progress\kendo-theme-default\.sassdocrc" />
+    <None Include="node_modules\%40progress\kendo-theme-default\build\all.js" />
+    <None Include="node_modules\%40progress\kendo-theme-default\build\customization.md.hbs" />
+    <None Include="node_modules\%40progress\kendo-theme-default\build\data-uri.template" />
+    <None Include="node_modules\%40progress\kendo-theme-default\build\embed-assets.js" />
+    <None Include="node_modules\%40progress\kendo-theme-default\build\file-to-sass.js" />
+    <None Include="node_modules\%40progress\kendo-theme-default\build\sassdoc-theme.js" />
+    <None Include="node_modules\%40progress\kendo-theme-default\docs\customization.md" />
+    <None Include="node_modules\%40progress\kendo-theme-default\docs\index.md" />
+    <None Include="node_modules\%40progress\kendo-theme-default\docs\_meta.yml" />
+    <None Include="node_modules\%40progress\kendo-theme-default\README.md" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\action-buttons.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\action-buttons\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\action-buttons\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\all.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\autocomplete.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\autocomplete\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\autocomplete\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\barcode.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\barcode\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\button.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\button\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\button\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\calendar.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\calendar\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\calendar\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\colorpicker.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\colorpicker\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\colorpicker\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\combobox.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\combobox\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\combobox\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\common\font\WebComponentsIcons.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\common\_all.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\common\_animations.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\common\_base.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\common\_dragclue.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\common\_forms.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\common\_icons.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\dataviz.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\dataviz\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\dataviz\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\datetime.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\datetime\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\datetime\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\dialog.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\dialog\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\dialog\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\dropdownlist.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\dropdownlist\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\dropdownlist\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\editor.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\editor\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\editor\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\gantt.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\gantt\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\gantt\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\grid.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\grid\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\grid\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\input.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\input\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\input\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\map.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\map\images\markers.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\map\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\mediaplayer.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\mediaplayer\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\mediaplayer\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\menu.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\menu\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\menu\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\mixins\appearance\_all.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\mixins\appearance\_button.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\mixins\appearance\_input.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\mixins\appearance\_node.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\mixins\appearance\_widget.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\mixins\core\_all.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\mixins\core\_data-uri.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\mixins\core\_import-once.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\mixins\core\_placeholder-selectors.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\mixins\utils\_all.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\mixins\utils\_blend-modes.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\mixins\utils\_compact.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\mixins\utils\_decoration.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\mixins\utils\_functions.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\mixins\_all.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\multiselect.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\multiselect\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\multiselect\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\notification.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\notification\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\notification\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\numerictextbox.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\numerictextbox\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\numerictextbox\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\pager.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\pager\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\pager\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\panelbar.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\panelbar\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\panelbar\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\pivotgrid.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\pivotgrid\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\pivotgrid\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\popup.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\popup\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\popup\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\progressbar.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\progressbar\images\indeterminate.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\progressbar\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\progressbar\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\qrcode.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\qrcode\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\responsivepanel.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\responsivepanel\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\responsivepanel\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\scheduler.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\scheduler\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\scheduler\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\scroller.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\scroller\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\scrollview.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\scrollview\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\scrollview\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\slider.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\slider\images\slider-h.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\slider\images\slider-v.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\slider\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\slider\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\splitter.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\splitter\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\splitter\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\spreadsheet.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\spreadsheet\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\spreadsheet\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\switch.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\switch\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\switch\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\tabstrip.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\tabstrip\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\tabstrip\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\toolbar.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\toolbar\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\toolbar\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\tooltip.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\tooltip\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\tooltip\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\treelist.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\treelist\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\treelist\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\treeview.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\treeview\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\treeview\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\upload.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\upload\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\upload\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\validator.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\validator\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\validator\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\window.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\window\_layout.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\window\_theme.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\scss\_variables.scss" />
+    <None Include="node_modules\%40progress\kendo-theme-default\webpack.config.js" />
     <None Include="wwwroot\images\veggieBG%403x.png" />
     <None Include="wwwroot\styles\all.css" />
     <None Include="wwwroot\styles\main.css" />
     <None Include="wwwroot\styles\vendor.css" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="node_modules\%40progress\kendo-theme-default\dist\all.css" />
+    <Content Include="node_modules\%40progress\kendo-theme-default\package.json" />
+    <Content Include="node_modules\%40progress\kendo-theme-default\scss\common\font\WebComponentsIcons.woff" />
+    <Content Include="node_modules\%40progress\kendo-theme-default\scss\map\images\markers.png" />
+    <Content Include="node_modules\%40progress\kendo-theme-default\scss\progressbar\images\indeterminate.gif" />
+    <Content Include="node_modules\%40progress\kendo-theme-default\scss\slider\images\slider-h.gif" />
+    <Content Include="node_modules\%40progress\kendo-theme-default\scss\slider\images\slider-v.gif" />
+    <Content Include="wwwroot\app\app.router.js" />
     <Content Include="wwwroot\tsconfig.json" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="less\" />
+    <Folder Include="wwwroot\libs\%40progress\" />
   </ItemGroup>
 </Project>

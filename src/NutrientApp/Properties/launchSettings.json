@@ -16,7 +16,7 @@
       }
     },
     "NutrientApp": {
-      "commandName": "Project"
+      "commandName": "IISExpress"
     }
   }
 }
