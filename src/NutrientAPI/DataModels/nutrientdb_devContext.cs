@@ -1,11 +1,10 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using NutrientAPI.DataModels;
 
 namespace NutrientAPI.DataModels
 {
-    public partial class NutrientsContext : DbContext
+    public partial class nutrientdb_devContext : DbContext
     {
         public virtual DbSet<AnimalTypes> AnimalTypes { get; set; }
         public virtual DbSet<Animals> Animals { get; set; }
@@ -28,7 +27,7 @@ namespace NutrientAPI.DataModels
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-//          #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+            #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
             optionsBuilder.UseSqlServer(@"Server=tcp:nutrientdb.database.windows.net,1433;Initial Catalog=nutrientdb_dev;Persist Security Info=False;User ID=ackqpunk@nutrientdb;Password=ackq9542_12;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         }
 

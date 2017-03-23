@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using nutrient_api.DataModels;
+using NutrientAPI.DataModels;
 using nutrient_api.Models;
 
 namespace nutrient_api.Controllers

@@ -2,7 +2,7 @@ using System;
 using System.Linq.Expressions;
 using nutrient_api.Models;
 using nutrient_api.Queries.SearchParameters;
-using DM = nutrient_api.DataModels;
+using DM = NutrientAPI.DataModels;
 using Model = nutrient_api.Models;
 
 namespace nutrient_api.Queries.Conversions {

@@ -1,5 +1,5 @@
 using System.Linq;
-using nutrient_api.DataModels;
+using NutrientAPI.DataModels;
 using nutrient_api.Models;
 using nutrient_api.Queries.SearchParameters;
 

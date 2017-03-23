@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using nutrient_api.DataModels;
+using NutrientAPI.DataModels;
 using nutrient_api.Models;
 
 namespace NutrientAPI
