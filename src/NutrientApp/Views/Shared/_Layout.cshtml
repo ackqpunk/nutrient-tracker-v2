@@ -3,6 +3,9 @@
 <head>
     <title>@ViewBag.Title</title>
     <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Nutrient App">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="/">
@@ -50,7 +53,9 @@
         </div>
     </article>
     <div class="footer">
-        <p>♥ from the Yeoman team</p>
+        <div class="container">
+            <p>&copy; @DateTime.Now.Year Nutrient App</p>
+        </div>
     </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

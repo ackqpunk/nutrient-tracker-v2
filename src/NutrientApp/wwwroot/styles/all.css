@@ -161,6 +161,9 @@ label {
 .title-row {
   margin-bottom: 4%;
 }
+.grid {
+  margin-bottom: 2%;
+}
 @media (min-width: 768px) {
   .form-buttons {
     padding-top: 4%;
