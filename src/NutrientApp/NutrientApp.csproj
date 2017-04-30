@@ -1,33 +1,29 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <PackageTargetFallback>portable-net45+win8</PackageTargetFallback>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugType></DebugType>
+    <DebugType>portable</DebugType>
     <CustomCommands>
       <CustomCommands>
         <Command>
           <type>Build</type>
           <command>npm build</command>
           <workingdir>${ProjectDir}/wwwroot</workingdir>
-          <externalConsole>True</externalConsole>
         </Command>
       </CustomCommands>
     </CustomCommands>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc">
-      <Version>1.1.1</Version>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.1">
     </PackageReference>
-    <PackageReference Include="Microsoft.AspNetCore.StaticFiles">
-      <Version>1.1.0</Version>
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.0">
     </PackageReference>
-    <PackageReference Include="Microsoft.AspNetCore">
-      <Version>1.1.0</Version>
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.0">
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.1" />
@@ -43,14 +39,13 @@
     <Content Remove="wwwroot\*.js.map" />
     <!--<Content Include="wwwroot\*.ts" />-->
     <Compile Remove="node_modules\**" />
-    <Content Remove="node_modules\**" />
     <EmbeddedResource Remove="node_modules\**" />
     <None Remove="node_modules\**" />
-    <Content Include="**\*.ts" Exclude="$(GlobalExclude)" />
+    <!--<Content Include="**\*.ts" Exclude="$(GlobalExclude)" />-->
     <Content Remove="wwwroot/app\login\login.component.js" />
     <Content Remove="wwwroot/app\splashScreen\splashScreen.component.js" />
     <Content Remove="wwwroot/app\splashScreen\splashScreen.component.js.map" />
-    <None Include="less\site.less" />
+    <!--<None Include="less\site.less" />
     <None Include="less\all.less" />
     <None Include="less\controls.less" />
     <None Include="node_modules\%40progress\kendo-theme-default\.editorconfig" />
@@ -223,10 +218,10 @@
     <None Include="wwwroot\images\veggieBG%403x.png" />
     <None Include="wwwroot\styles\all.css" />
     <None Include="wwwroot\styles\main.css" />
-    <None Include="wwwroot\styles\vendor.css" />
+    <None Include="wwwroot\styles\vendor.css" />-->
   </ItemGroup>
   <ItemGroup>
-    <Content Include="node_modules\%40progress\kendo-theme-default\dist\all.css" />
+    <!--<Content Include="node_modules\%40progress\kendo-theme-default\dist\all.css" />
     <Content Include="node_modules\%40progress\kendo-theme-default\package.json" />
     <Content Include="node_modules\%40progress\kendo-theme-default\scss\common\font\WebComponentsIcons.woff" />
     <Content Include="node_modules\%40progress\kendo-theme-default\scss\map\images\markers.png" />
@@ -234,9 +229,10 @@
     <Content Include="node_modules\%40progress\kendo-theme-default\scss\slider\images\slider-h.gif" />
     <Content Include="node_modules\%40progress\kendo-theme-default\scss\slider\images\slider-v.gif" />
     <Content Include="wwwroot\app\app.router.js" />
-    <Content Include="wwwroot\tsconfig.json" />
+    <Content Include="wwwroot\tsconfig.json" />-->
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\libs\%40progress\" />
+    <Folder Include="wwwroot\app\models\" />
   </ItemGroup>
 </Project>

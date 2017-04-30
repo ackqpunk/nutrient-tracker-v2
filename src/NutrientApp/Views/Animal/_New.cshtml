@@ -8,12 +8,18 @@
     <h2>New Animal</h2>
     <div class="form">
         <div class="form-group">
-            <label for="exampleInputEmail1" class="pull-left">Name</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <label for="AnimalName" class="pull-left">Name</label>
+            <input type="text" class="form-control" id="AnimalName" placeholder="Animal's Name">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1" class="pull-left">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="OwnersLastName" class="pull-left">Owner's Last Name'</label>
+            <input type="password" class="form-control" id="OwnersLastName" placeholder="Owner's Last Name">
+        </div>
+		<div class="form-group">
+            <label for="AnimalType" class="pull-left">Type of Animal'</label>
+            <select [(ngModel)]="simpleValue"> // value is a string or number
+			    <option *ngFor="#obj of objArray" [value]="obj.value">{{obj.name}}</option>
+			</select>
         </div>
         <div class="row form-buttons">
             <div class="col-md-6 col-sm-12">

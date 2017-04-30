@@ -19,5 +19,9 @@ namespace NutrientApp.Controllers
         public IActionResult Existing() {
             return PartialView("_ExistingList");
         }
+
+        public IActionResult New() {
+            return PartialView("_New");
+        }
     }
 }

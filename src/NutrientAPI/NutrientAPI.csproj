@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp1.0</TargetFramework>
@@ -8,8 +8,7 @@
     <PackageReference Include="LinqKit.Microsoft.EntityFrameworkCore" Version="1.1.9" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="1.1.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc">
-      <Version>1.1.1</Version>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.1">
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Routing" Version="1.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.1" />
@@ -18,9 +17,15 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.0-preview4-final" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.1" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.0.6.13" />
   </ItemGroup>
   <ItemGroup>
   <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.1.0-preview4-final" />
   <!--<DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGenerators.Mvc" Version="1.1.0-preview4-final" />-->
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Queries\New Folder\" />
+    <Folder Include="Queries\Common\" />
+    <Folder Include="Queries\DataTransfer\" />
   </ItemGroup>
 </Project>

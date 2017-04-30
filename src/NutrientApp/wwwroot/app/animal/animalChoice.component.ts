@@ -9,6 +9,9 @@ export class AnimalChoiceComponent {
     constructor(public router: Router) {
 
     }
+    goNew(){
+        this.router.navigate(['newAnimal'])
+    }
     goExisting() {
         this.router.navigate(['existing'])
     }

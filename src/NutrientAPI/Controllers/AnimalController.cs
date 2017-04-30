@@ -4,6 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NutrientAPI.DataModels;
+using NutrientAPI.Queries.Common;
+using NutrientAPI.Queries;
+
+using NutrientAPI.Queries.SearchParameters;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,10 +17,19 @@ namespace NutrientAPI.Controllers
     public class AnimalController : Controller
     {
         private NutrientsContext db;
+        private DataSource queryDataSource;
         
-        public AnimalController(NutrientsContext db)
+        public AnimalController()
         {
-            this.db = db;
+            this.db = new NutrientsContext();
+            this.queryDataSource = new DataSource(db);
+        }
+
+        [Route("list")]
+        public IActionResult GetList(AnimalSearchParameters param)
+        {
+            var query = new AnimalListQuery(queryDataSource).ExecuteQuery(param);
+            return Ok(query);
         }
 
         [Route("breeds")]

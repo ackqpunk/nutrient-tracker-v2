@@ -14,6 +14,9 @@ var AnimalChoiceComponent = (function () {
     function AnimalChoiceComponent(router) {
         this.router = router;
     }
+    AnimalChoiceComponent.prototype.goNew = function () {
+        this.router.navigate(['newAnimal']);
+    };
     AnimalChoiceComponent.prototype.goExisting = function () {
         this.router.navigate(['existing']);
     };

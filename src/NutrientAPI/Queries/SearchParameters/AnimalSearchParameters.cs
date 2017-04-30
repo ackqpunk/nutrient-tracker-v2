@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using NutrientAPI.Queries.Common;
 
 namespace NutrientAPI.Queries.SearchParameters
 {
-    public class AnimalSearchParameters
+    public class AnimalSearchParameters : SearchBase
     {
         public string Name { get; set; }
         public long AnimalTypeID { get; set; }
